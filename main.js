@@ -52,12 +52,24 @@ function RenderMark(ID) {
 
 function RenderInformation(ID) {
     var NameStationElement = document.getElementById('NameStationElement');
-    var QualityStationElement = document.getElementById('QualityStationElement');
+    var CO2StationElement = document.getElementById('CO2StationElement');
+    var DustStationElement = document.getElementById('DustStationElement');
+    var CoordinatesStationXvalue = document.getElementById('CoordinatesStationXvalue');
+    var CoordinatesStationYvalue = document.getElementById('CoordinatesStationYvalue');
     database.ref("/Station"+String(ID)+"/Name").on("value", function (snapshot) {
         NameStationElement.innerHTML = snapshot.val();
     })
-    database.ref("/Station" + String(ID) + "/Quality").on("value", function (snapshot) {
-        QualityStationElement.innerHTML = snapshot.val();
+    database.ref("/Station" + String(ID) + "/CO2").on("value", function (snapshot) {
+        CO2StationElement.innerHTML = snapshot.val();
+    })
+    database.ref("/Station" + String(ID) + "/Xvalue").on("value", function (snapshot) {
+        CoordinatesStationXvalue.innerHTML = snapshot.val();
+    })
+    database.ref("/Station" + String(ID) + "/Yvalue").on("value", function (snapshot) {
+        CoordinatesStationYvalue.innerHTML = snapshot.val();
+    })
+    database.ref("/Station" + String(ID) + "/Dust").on("value", function (snapshot) {
+        DustStationElement.innerHTML = snapshot.val();
     })
 }
 
