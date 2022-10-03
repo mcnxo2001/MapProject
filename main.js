@@ -23,8 +23,7 @@ var ref = firebase.database().ref();
 ref.once("value")
     .then(function (snapshot) {
         console.log(snapshot.numChildren());
-        for (var i = 1; i <= snapshot.numChildren(); i++)
-        {
+        for (var i = 1; i <= snapshot.numChildren(); i++) {
             RenderMark(i);
         }
     });
@@ -56,7 +55,7 @@ function RenderInformation(ID) {
     var DustStationElement = document.getElementById('DustStationElement');
     var CoordinatesStationXvalue = document.getElementById('CoordinatesStationXvalue');
     var CoordinatesStationYvalue = document.getElementById('CoordinatesStationYvalue');
-    database.ref("/Station"+String(ID)+"/Name").on("value", function (snapshot) {
+    database.ref("/Station" + String(ID) + "/Name").on("value", function (snapshot) {
         NameStationElement.innerHTML = snapshot.val();
     })
     database.ref("/Station" + String(ID) + "/CO2").on("value", function (snapshot) {
@@ -71,5 +70,45 @@ function RenderInformation(ID) {
     database.ref("/Station" + String(ID) + "/Dust").on("value", function (snapshot) {
         DustStationElement.innerHTML = snapshot.val();
     })
+}
+
+if(screen.width> 780){
+    ArrowContainer.innerHTML = "<";
+}
+else
+{
+    ArrowContainer.innerHTML = "Up";
+}
+
+let ShowHIdeBool = false;
+
+function ShowHide() {
+    if (ShowHIdeBool == false && screen.width > 780) {
+        MapInfomation.style.display = "none";
+        ArrowContainer.innerHTML = ">";
+        ArrowContainer.style.marginLeft = "0px";
+        ShowHIdeBool = true;
+    }
+    else if (ShowHIdeBool == true && screen.width > 780){
+        MapInfomation.style.display = "block";
+        ArrowContainer.innerHTML = "<";
+        ArrowContainer.style.marginLeft = "420px";
+        ShowHIdeBool = false;
+    }
+
+    if (ShowHIdeBool == false && screen.width < 780) {
+        MapInfomation.style.display = "none";
+        ArrowContainer.innerHTML = "Up";
+        ArrowContainer.style.marginTop = "0px";
+        ShowHIdeBool = true;
+        Mapid.style.height = "670px";
+    }
+    else if (ShowHIdeBool == true && screen.width < 780) {
+        MapInfomation.style.display = "block";
+        ArrowContainer.innerHTML = "Down";
+        ArrowContainer.style.marginTop = "260px";
+        ShowHIdeBool = false;
+        Mapid.style.height = "400px";
+    }
 }
 
