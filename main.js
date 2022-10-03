@@ -73,11 +73,11 @@ function RenderInformation(ID) {
 }
 
 if(screen.width> 780){
-    ArrowContainer.innerHTML = "<";
+    ArrowContainer.innerHTML = "🔚";
 }
 else
 {
-    ArrowContainer.innerHTML = "Up";
+    ArrowContainer.innerHTML = "⬆";
 }
 
 let ShowHIdeBool = false;
@@ -85,27 +85,27 @@ let ShowHIdeBool = false;
 function ShowHide() {
     if (ShowHIdeBool == false && screen.width > 780) {
         MapInfomation.style.display = "none";
-        ArrowContainer.innerHTML = ">";
+        ArrowContainer.innerHTML = "🔜";
         ArrowContainer.style.marginLeft = "0px";
         ShowHIdeBool = true;
     }
     else if (ShowHIdeBool == true && screen.width > 780){
         MapInfomation.style.display = "block";
-        ArrowContainer.innerHTML = "<";
+        ArrowContainer.innerHTML = "🔚";
         ArrowContainer.style.marginLeft = "420px";
         ShowHIdeBool = false;
     }
 
     if (ShowHIdeBool == false && screen.width < 780) {
         MapInfomation.style.display = "none";
-        ArrowContainer.innerHTML = "Up";
+        ArrowContainer.innerHTML = "⬇";
         ArrowContainer.style.marginTop = "0px";
         ShowHIdeBool = true;
         Mapid.style.height = "670px";
     }
     else if (ShowHIdeBool == true && screen.width < 780) {
         MapInfomation.style.display = "block";
-        ArrowContainer.innerHTML = "Down";
+        ArrowContainer.innerHTML = "⬆";
         ArrowContainer.style.marginTop = "260px";
         ShowHIdeBool = false;
         Mapid.style.height = "400px";
