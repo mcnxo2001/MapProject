@@ -101,14 +101,12 @@ function ShowHide() {
         ArrowContainer.innerHTML = "⬇";
         ArrowContainer.style.marginTop = "0px";
         ShowHIdeBool = true;
-        Mapid.style.height = "670px";
     }
     else if (ShowHIdeBool == true && screen.width < 780) {
         MapInfomation.style.display = "block";
         ArrowContainer.innerHTML = "⬆";
         ArrowContainer.style.marginTop = "260px";
         ShowHIdeBool = false;
-        Mapid.style.height = "400px";
     }
 }
 

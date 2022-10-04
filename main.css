@@ -99,19 +99,20 @@ body {
 .ComponentStationElementData {
     margin-right: 10px;
 }
-.ComponentStationElementScale{
+
+.ComponentStationElementScale {
     margin-right: 15px;
 }
 
 .ArrowContainer {
     z-index: 4;
     margin-top: auto;
-    margin-bottom:auto;
+    margin-bottom: auto;
     width: 50px;
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     font-weight: bold;
     font-size: 20px;
     position: absolute;
@@ -123,7 +124,8 @@ body {
     transition: 0.5s;
     margin-left: 420px;
 }
-.ArrowContainer:hover{
+
+.ArrowContainer:hover {
     cursor: pointer;
 }
 
@@ -139,7 +141,7 @@ body {
     }
 
     .Map {
-        height: 400px;
+        height: 100;
     }
 
     .MapInfomationTheme {
@@ -153,11 +155,16 @@ body {
         margin-left: auto;
         margin-right: auto;
     }
-    .ArrowContainer{
+
+    .ArrowContainer {
         top: unset;
         bottom: unset;
         position: absolute;
         right: 45%;
         margin-top: 260px;
+    }
+
+    body {
+        zoom: 0.8;
     }
 }
