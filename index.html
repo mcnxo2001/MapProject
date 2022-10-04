@@ -12,6 +12,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
     <link rel="stylesheet" href="main.css">
     <title>Map</title>
 </head>
@@ -42,10 +43,16 @@
                     </div>
                 </div>
             </div>
+            <div class="MapInfomationExport" id="ExportExcel" onclick="ExportExcelFile()">
+                <div>Export Excel</div>
+                <div class="ExportIcon">></div>
+            </div>
+            <div id="Exeabc" class="Exeabc"></div>
         </div>
         <div class="ArrowContainer" id="ArrowContainer" onclick="ShowHide(0)"> < </div>
         <div id="Mapid" class="Map"></div>
     </div>
+   
     <script src="main.js"></script>
 </body>
 </html>
