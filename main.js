@@ -138,7 +138,6 @@ function ExportToTable() {
                     </tr>
                 </table>
                 `;
-    Exeabc.innerHTML = Value;
     var ref1 = firebase.database().ref();
     ref1.once("value")
         .then(function (snapshot) {
