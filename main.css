@@ -193,10 +193,14 @@ body {
         bottom: unset;
         position: absolute;
         right: 45%;
-        margin-top: 260px;
+        margin-top: 360px;
     }
     .MapInfomationStationLeft{
         width: 300px;
+    }
+    .MapInfomationExport{
+        margin-left: auto;
+        margin-right: auto;
     }
 
     body {
