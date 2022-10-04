@@ -50,6 +50,7 @@ function RenderMark(ID) {
 }
 
 function RenderInformation(ID) {
+    ShowHide(1);
     var NameStationElement = document.getElementById('NameStationElement');
     var CO2StationElement = document.getElementById('CO2StationElement');
     var DustStationElement = document.getElementById('DustStationElement');
@@ -82,31 +83,49 @@ else
 
 let ShowHIdeBool = false;
 
-function ShowHide() {
-    if (ShowHIdeBool == false && screen.width > 780) {
-        MapInfomation.style.display = "none";
-        ArrowContainer.innerHTML = "🔜";
-        ArrowContainer.style.marginLeft = "0px";
-        ShowHIdeBool = true;
-    }
-    else if (ShowHIdeBool == true && screen.width > 780){
-        MapInfomation.style.display = "block";
-        ArrowContainer.innerHTML = "🔚";
-        ArrowContainer.style.marginLeft = "420px";
-        ShowHIdeBool = false;
-    }
+function ShowHide(a) {
+    if(a==0)
+    {
+        if (ShowHIdeBool == false && screen.width > 780) {
+            MapInfomation.style.display = "none";
+            ArrowContainer.innerHTML = "🔜";
+            ArrowContainer.style.marginLeft = "0px";
+            ShowHIdeBool = true;
+        }
+        else if (ShowHIdeBool == true && screen.width > 780) {
+            MapInfomation.style.display = "block";
+            ArrowContainer.innerHTML = "🔚";
+            ArrowContainer.style.marginLeft = "420px";
+            ShowHIdeBool = false;
+        }
 
-    if (ShowHIdeBool == false && screen.width < 780) {
-        MapInfomation.style.display = "none";
-        ArrowContainer.innerHTML = "⬇";
-        ArrowContainer.style.marginTop = "0px";
-        ShowHIdeBool = true;
+        if (ShowHIdeBool == false && screen.width < 780) {
+            MapInfomation.style.display = "none";
+            ArrowContainer.innerHTML = "⬇";
+            ArrowContainer.style.marginTop = "0px";
+            ShowHIdeBool = true;
+        }
+        else if (ShowHIdeBool == true && screen.width < 780) {
+            MapInfomation.style.display = "block";
+            ArrowContainer.innerHTML = "⬆";
+            ArrowContainer.style.marginTop = "260px";
+            ShowHIdeBool = false;
+        }
     }
-    else if (ShowHIdeBool == true && screen.width < 780) {
-        MapInfomation.style.display = "block";
-        ArrowContainer.innerHTML = "⬆";
-        ArrowContainer.style.marginTop = "260px";
-        ShowHIdeBool = false;
+    if(a==1)
+    {
+        if (ShowHIdeBool == true && screen.width > 780) {
+            MapInfomation.style.display = "block";
+            ArrowContainer.innerHTML = "🔚";
+            ArrowContainer.style.marginLeft = "420px";
+            ShowHIdeBool = false;
+        }
+        if (ShowHIdeBool == true && screen.width < 780) {
+            MapInfomation.style.display = "block";
+            ArrowContainer.innerHTML = "⬆";
+            ArrowContainer.style.marginTop = "260px";
+            ShowHIdeBool = false;
+        }
     }
 }
 
