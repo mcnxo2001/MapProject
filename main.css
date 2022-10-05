@@ -185,7 +185,7 @@ body {
 
     .MapInfomationStation {
         height: 160px;
-        width: 350px;
+        width: 400px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -198,7 +198,7 @@ body {
         margin-top: 360px;
     }
     .MapInfomationStationLeft{
-        width: 300px;
+        width: 170px;
     }
     .MapInfomationExport{
         margin-left: auto;
