@@ -93,7 +93,7 @@ function ShowHide(a) {
         else if (ShowHIdeBool == true && screen.width > 780) {
             MapInfomation.style.display = "block";
             ArrowContainer.innerHTML = "🔚";
-            ArrowContainer.style.marginLeft = "420px";
+            ArrowContainer.style.marginLeft = "440px";
             ShowHIdeBool = false;
         }
 
@@ -127,7 +127,7 @@ function ShowHide(a) {
 }
 
 function ExportToTable() {
-    var Exeabc = document.getElementById('Exeabc');
+    var TableData = document.getElementById('TableData');
     let Value = `<table id="tabledata" border="1">
                     <tr>
                         <th>Name</th>
@@ -141,7 +141,7 @@ function ExportToTable() {
     var ref1 = firebase.database().ref();
     ref1.once("value")
         .then(function (snapshot) {
-            Exeabc.innerHTML = Value;
+            TableData.innerHTML = Value;
             for (var i = 1; i <= snapshot.numChildren(); i++) {
                 database.ref("/Station" + String(i)).on("value", function (snapshot) {
                     Xvalue = snapshot.val().Xvalue;
