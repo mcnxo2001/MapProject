@@ -120,7 +120,7 @@ function ShowHide(a) {
         if (ShowHIdeBool == true && screen.width < 780) {
             MapInfomation.style.display = "block";
             ArrowContainer.innerHTML = "⬆";
-            ArrowContainer.style.marginTop = "260px";
+            ArrowContainer.style.marginTop = "360px";
             ShowHIdeBool = false;
         }
     }
