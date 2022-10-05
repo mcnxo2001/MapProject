@@ -99,16 +99,16 @@ body {
 }
 
 .ComponentStationElementTitle {
-    margin-right: 10px;
+    width: 140px;
     margin-left: 20px;
 }
 
 .ComponentStationElementData {
-    margin-right: 10px;
+    width: 50px;
 }
 
 .ComponentStationElementScale {
-    margin-right: 15px;
+    width: 80px;
 }
 
 .ArrowContainer {
@@ -217,8 +217,8 @@ body {
         margin-top: 360px;
     }
     .MapInfomationStationLeft{
-        width: 170px;
-        padding-right: 20px;
+        width: 150px;
+        padding-right: 40px;
     }
     .MapInfomationExport{
         margin-left: auto;
