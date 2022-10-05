@@ -132,7 +132,7 @@ body {
     background-color:rgb(0, 255, 38);
     margin-top: 30px;
     width: 150px;
-    height: 50px;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -149,7 +149,7 @@ body {
     font-weight: bold;
     font-size: 25px;
     background-color: rgb(255, 96, 4);
-    height: 50px;
+    height: 60px;
     display: flex;
     align-items: center;
     width: 50px;
@@ -159,6 +159,11 @@ body {
 }
 .Exeabc{
     display:none;
+}
+.MapInfomationExportTheme{
+    display: flex;
+    justify-content:center;
+    align-items: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -185,7 +190,7 @@ body {
 
     .MapInfomationStation {
         height: 160px;
-        width: 400px;
+        width: 430px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -199,10 +204,19 @@ body {
     }
     .MapInfomationStationLeft{
         width: 170px;
+        padding-right: 20px;
     }
     .MapInfomationExport{
         margin-left: auto;
         margin-right: auto;
+    }
+    .MapInfomationStationRight{
+        width: max-content;
+        padding-right: 20px;
+    }
+    .MapInfomationExport{
+        width: 200px;
+        height: 60px
     }
 
     body {
