@@ -1,5 +1,7 @@
 body {
     margin: 0;
+    font-family: 'Muli', sans-serif;
+    color: #2F1C6A
 }
 
 .MapContainer {
@@ -16,7 +18,7 @@ body {
 
 .MapInfomation {
     align-items: center;
-    box-shadow: rgb(0 0 0 / 22%) 13px 0px 6px -5px;
+    box-shadow: rgb(0 0 0 / 22%) 13px 11px 6px -5px;
     z-index: 3;
     transition: 0.5s;
     position: absolute;
@@ -34,18 +36,23 @@ body {
 }
 
 .MapInfomationTheme {
-    background-color: rgb(153, 233, 34);
     text-align: center;
-    height: 100px;
+    ;
     padding-top: 30px;
-    color: rgb(255, 255, 255);
     font-weight: bold;
     font-size: 20px;
     border-radius: 20px;
     margin: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
     box-shadow: 0px 0px 15px -4px black;
+    background-color: white;
+}
+
+.MapInfomationAttach {
+    font-size: 19px;
+    margin-top: 20px;
 }
 
 .MapInfomationStation {
@@ -139,7 +146,6 @@ body {
 }
 
 .MapInfomationExport {
-    background-color: rgb(0, 255, 38);
     margin-top: 15px;
     width: 150px;
     height: 60px;
@@ -147,15 +153,15 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    box-shadow: 5px 3px 9px -5px;
+    box-shadow: 0px 0px 8px -4px;
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
+    background-color: white;
 }
 
 .MapInfomationExport:hover {
     cursor: pointer;
-    background-color: rgb(8, 229, 42);
 }
 
 .ExportIcon {
@@ -179,7 +185,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
     font-weight: bold;
     font-size: 17px
 }
@@ -235,15 +240,17 @@ svg {
     height: 160px;
 }
 
-.BarDataTitle{
+.BarDataTitle {
     width: max-content;
     margin-left: auto;
     margin-right: auto;
 }
-.ItemMapStation{
+
+.ItemMapStation {
     margin-left: 20px;
     margin-bottom: 20px;
 }
+
 @media screen and (max-width: 768px) {
     .MapContainer {
         flex-direction: column;
@@ -258,7 +265,7 @@ svg {
         height: unset;
         margin-left: unset;
         margin-top: unset;
-        display:none;
+        display: none;
     }
 
     .Map {
@@ -266,8 +273,12 @@ svg {
     }
 
     .MapInfomationTheme {
-        height: 50px;
         padding-top: 10px;
+        padding-left: 60px;
+        padding-right: 60px;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-top: 20px;
     }
 
     .MapInfomationStation {

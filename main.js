@@ -30,21 +30,15 @@ ref.once("value")
 function RenderMark(ID) {
 
     database.ref("/Station" + String(ID)).on("value", function (snapshot) {
-        Xvalue = snapshot.val().Xvalue;
-        Yvalue = snapshot.val().Yvalue;
-        const markerPoint = L.marker([Xvalue, Yvalue]).addTo(map);
+        let Xvalue = snapshot.val().Xvalue;
+        let Yvalue = snapshot.val().Yvalue;
+        let markerPoint = L.marker([Xvalue, Yvalue]).addTo(map);
 
         let InformationStation1 =
             `
-    <div onclick="RenderInformation(${ID})" class="MarkerStation">Thông tin trạm</div>
-    `
+            <div onclick="RenderInformation(${ID})" class="MarkerStation">Thông tin trạm</div>
+            `
         markerPoint.bindPopup(InformationStation1);
-        L.circle([Xvalue, Yvalue], {
-            radius: 100,
-            color: 'green',
-            fillColor: 'red',
-            fillOpacity: 0.2
-        }).addTo(map);
         ExportToTable();
     })
 }
@@ -122,7 +116,7 @@ function ShowHide(a) {
         else if (ShowHIdeBool == false && screen.width < 780) {
             MapInfomation.style.display = "block";
             ArrowContainer.innerHTML = "⬆";
-            ArrowContainer.style.marginTop = "540px";
+            ArrowContainer.style.marginTop = "630px";
             ShowHIdeBool = true;
         }
     }
@@ -136,7 +130,7 @@ function ShowHide(a) {
         if (ShowHIdeBool == false && screen.width < 780) {
             MapInfomation.style.display = "block";
             ArrowContainer.innerHTML = "⬆";
-            ArrowContainer.style.marginTop = "540px";
+            ArrowContainer.style.marginTop = "630px";
             ShowHIdeBool = true;
         }
     }
