@@ -43,7 +43,6 @@ function RenderMark(ID) {
     })
 }
 
-let CurrentStation = 0;
 
 function RenderInformation(IDItem) {
     ShowHide(1);
@@ -54,41 +53,41 @@ function RenderInformation(IDItem) {
     var BarDataNumber2 = document.getElementById('BarDataNumber2');
     var BarDataNumber3 = document.getElementById('BarDataNumber3');
     var BarDataNumber4 = document.getElementById('BarDataNumber4');
-    database.ref("/Station" + String(CurrentStation) + "/Name").on("value", function (snapshot) {
+    database.ref("/Station" + String(IDItem) + "/Name").on("value", function (snapshot) {
         NameStationElement.innerHTML = snapshot.val();
     })
-    database.ref("/Station" + String(CurrentStation) + "/Xvalue").on("value", function (snapshot) {
+    database.ref("/Station" + String(IDItem) + "/Xvalue").on("value", function (snapshot) {
         if (NameStationElement.textContent == "Trạm " + String(IDItem)) {
             CoordinatesStationXvalue.innerHTML = snapshot.val();
         }
     })
-    database.ref("/Station" + String(CurrentStation) + "/Yvalue").on("value", function (snapshot) {
+    database.ref("/Station" + String(IDItem) + "/Yvalue" ).on("value", function (snapshot) {
         if (NameStationElement.textContent == "Trạm " + String(IDItem)) {
             CoordinatesStationYvalue.innerHTML = snapshot.val();
         }
     })
-    database.ref("/Station" + String(CurrentStation) + "/Ph").on("value", function (snapshot) {
+    database.ref("/Station" + String(IDItem) + "/Ph").on("value", function (snapshot) {
         if (NameStationElement.textContent == "Trạm " + String(IDItem)) {
             var RatePh = snapshot.val() / 10 * 100;
             BarDataNumber1.innerHTML = snapshot.val();
             RateData(Math.round(RatePh), 'CircleData1');
         }
     });
-    database.ref("/Station" + String(CurrentStation) + "/TDS").on("value", function (snapshot) {
+    database.ref("/Station" + String(IDItem) + "/TDS").on("value", function (snapshot) {
         if (NameStationElement.textContent == "Trạm " + String(IDItem)) {
             var RateTDS = snapshot.val() / 1500 * 100;
             BarDataNumber2.innerHTML = snapshot.val();
             RateData(Math.round(RateTDS), 'CircleData2');
         }
     })
-    database.ref("/Station" + String(CurrentStation) + "/Temperature").on("value", function (snapshot) {
+    database.ref("/Station" + String(IDItem) + "/Temperature").on("value", function (snapshot) {
         if (NameStationElement.textContent == "Trạm " + String(IDItem)) {
             var RateTemperature = snapshot.val();
             BarDataNumber3.innerHTML = snapshot.val();
             RateData(Math.round(RateTemperature), 'CircleData3');
         }
     })
-    database.ref("/Station" + String(CurrentStation) + "/Turbidity").on("value", function (snapshot) {
+    database.ref("/Station" + String(IDItem) + "/Turbidity").on("value", function (snapshot) {
         if (NameStationElement.textContent == "Trạm " + String(IDItem)) {
             var RateTurbidity = snapshot.val() / 70 * 100;
             BarDataNumber4.innerHTML = snapshot.val();
