@@ -60,7 +60,6 @@ function RenderMark(ID) {
             //     fillColor: 'red',
             //     fillOpacity: 0.8
             // }).addTo(map);
-            ExportToTable();
         }
     }, 1000)
 }
@@ -213,9 +212,8 @@ function ShowHide(a) {
 }
 
 function ExportToTable() {
-    setInterval(() => {
-        var TableData = document.getElementById('TableData');
-        let Value = `<table id="tabledata" border="1">
+    var TableData = document.getElementById('TableData');
+    let Value = `<table id="tabledata" border="1">
                     <tr>
                         <th>Name</th>
                         <th>Xvalue</th>
@@ -227,39 +225,38 @@ function ExportToTable() {
                     </tr>
                 </table>
                 `;
-        TableData.innerHTML = Value;
-        let PH = parseFloat(GetDataModuleSim().feeds[0].field1);
-        let TDS = parseFloat(GetDataModuleSim().feeds[0].field2);
-        let Turbidity = parseFloat(GetDataModuleSim().feeds[0].field3);
-        let Temperature = parseFloat(GetDataModuleSim().feeds[0].field4);
-        let Latitude = parseFloat(GetDataModuleSim().feeds[0].field5);
-        let Longitude = parseFloat(GetDataModuleSim().feeds[0].field6);
-        let NameStation = GetDataModuleSim().channel.name;
-        var tabledata = document.getElementById('tabledata');
-        var tr = document.createElement('tr');
-        var td1 = document.createElement('td');
-        td1.appendChild(document.createTextNode(`${NameStation}`));
-        var td2 = document.createElement('td');
-        td2.appendChild(document.createTextNode(`${Latitude}`));
-        var td3 = document.createElement('td');
-        td3.appendChild(document.createTextNode(`${Longitude}`));
-        var td4 = document.createElement('td');
-        td4.appendChild(document.createTextNode(`${PH}`));
-        var td5 = document.createElement('td');
-        td5.appendChild(document.createTextNode(`${TDS}`));
-        var td6 = document.createElement('td');
-        td6.appendChild(document.createTextNode(`${Temperature}`));
-        var td7 = document.createElement('td');
-        td7.appendChild(document.createTextNode(`${Turbidity}`));
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-        tr.appendChild(td3);
-        tr.appendChild(td4);
-        tr.appendChild(td5);
-        tr.appendChild(td6);
-        tr.appendChild(td7);
-        tabledata.appendChild(tr);
-    })
+    TableData.innerHTML = Value;
+    let PH = parseFloat(GetDataModuleSim().feeds[0].field1);
+    let TDS = parseFloat(GetDataModuleSim().feeds[0].field2);
+    let Turbidity = parseFloat(GetDataModuleSim().feeds[0].field3);
+    let Temperature = parseFloat(GetDataModuleSim().feeds[0].field4);
+    let Latitude = parseFloat(GetDataModuleSim().feeds[0].field5);
+    let Longitude = parseFloat(GetDataModuleSim().feeds[0].field6);
+    let NameStation = GetDataModuleSim().channel.name;
+    var tabledata = document.getElementById('tabledata');
+    var tr = document.createElement('tr');
+    var td1 = document.createElement('td');
+    td1.appendChild(document.createTextNode(`${NameStation}`));
+    var td2 = document.createElement('td');
+    td2.appendChild(document.createTextNode(`${Latitude}`));
+    var td3 = document.createElement('td');
+    td3.appendChild(document.createTextNode(`${Longitude}`));
+    var td4 = document.createElement('td');
+    td4.appendChild(document.createTextNode(`${PH}`));
+    var td5 = document.createElement('td');
+    td5.appendChild(document.createTextNode(`${TDS}`));
+    var td6 = document.createElement('td');
+    td6.appendChild(document.createTextNode(`${Temperature}`));
+    var td7 = document.createElement('td');
+    td7.appendChild(document.createTextNode(`${Turbidity}`));
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+    tr.appendChild(td5);
+    tr.appendChild(td6);
+    tr.appendChild(td7);
+    tabledata.appendChild(tr);
     // var ref1 = firebase.database().ref();
     // ref1.once("value")
     //     .then(function (snapshot) {
@@ -302,6 +299,7 @@ function ExportToTable() {
     //     });
 }
 function ExportExcelFile() {
+    ExportToTable();
     var tabledata = document.getElementById('tabledata');
     var wb = XLSX.utils.table_to_book(tabledata, { sheet: "sheet1" });
     return XLSX.writeFile(wb, "MapProject" + "." + "xlsx" || ("MySheet." + ("xlsx" || "xlsx")));
